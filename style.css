@@ -1,0 +1,122 @@
+/* ---------- Basic reset ---------- */ 
+* { box-sizing: border-box; margin: 0; padding: 0; } 
+:root { --navy: #1f3a5f; --gold: #c9973a; --light: #f4f6fa; --text: #222; --gap: 20px; 
+} 
+body { 
+font-family: Arial, Helvetica, sans-serif; 
+background: var(--light); 
+color: var(--text); 
+line-height: 1.6; 
+} 
+  
+img { max-width: 100%; height: auto; display: block; } 
+.container { width: 92%; max-width: 1200px; margin: 0 auto; } 
+/* Skip link for keyboard users */ 
+.skip-link { 
+position: absolute; left: -999px; top: 0; 
+background: var(--gold); color: #000; padding: 8px 14px; z-index: 200; 
+} 
+.skip-link:focus { left: 10px; } 
+/* ---------- Header (Flexbox) ---------- */ 
+.site-header { background: var(--navy); color: #fff; position: sticky; top: 0; z-index: 50; } 
+.header-inner { 
+display: flex; 
+justify-content: space-between; 
+align-items: center; 
+flex-wrap: wrap; 
+padding: 14px 0; 
+gap: 10px; 
+} 
+.logo span { color: var(--gold); } 
+.logo { font-size: 1.5rem; letter-spacing: 1px; } 
+.nav-list { display: flex; gap: 20px; list-style: none; } 
+.nav-list a { color: #fff; text-decoration: none; padding: 4px 2px; } 
+.nav-list a:hover { color: var(--gold); } 
+a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; } 
+/* ---------- Hero ---------- */ 
+.hero { text-align: center; padding: 40px 0 10px; } 
+.hero h2 { color: var(--navy); font-size: 1.6rem; margin-bottom: 8px; } 
+  
+.section-title { color: var(--navy); margin: 30px 0 16px; text-transform: uppercase; font-size: 
+1.2rem; } 
+/* ---------- Gallery (CSS Grid) ---------- */ 
+.gallery { 
+display: grid; 
+grid-template-columns: 1fr;            
+gap: var(--gap); 
+} 
+.card { 
+background: #fff; 
+border-radius: 10px; 
+overflow: hidden; 
+/* mobile: 1 column */ 
+box-shadow: 0 2px 8px rgba(0, 0, 0, .12); 
+display: flex;                          
+flex-direction: column; 
+/* Flexbox inside card */ 
+transition: transform .2s, box-shadow .2s; 
+} 
+.card:hover { transform: translateY(-4px); box-shadow: 0 8px 18px rgba(0, 0, 0, .2); } 
+.thumb { border: 0; padding: 0; background: none; cursor: zoom-in; display: block; width: 
+100%; } 
+.thumb img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; } 
+.card figcaption { padding: 12px 14px 16px; } 
+.card h3 { color: var(--navy); font-size: 1.05rem; } 
+.card p { font-size: .9rem; color: #555; } 
+/* ---------- Info + Footer ---------- */ 
+.info { padding-bottom: 40px; } 
+.site-footer { background: var(--navy); color: #fff; padding: 18px 0; font-size: .9rem; } 
+.footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; } 
+ 
+ 
+/* ---------- Media queries (breakpoints) ---------- */ 
+/* Tablet: 2 columns */ 
+@media (min-width: 600px) { 
+.gallery { grid-template-columns: repeat(2, 1fr); } 
+.featured { grid-column: span 2; }       
+} 
+/* Small desktop: 3 columns */ 
+@media (min-width: 900px) { 
+/* first card spans both columns */ 
+.gallery { grid-template-columns: repeat(3, 1fr); } 
+.hero h2 { font-size: 2rem; } 
+} 
+/* Large desktop: 4 columns */ 
+@media (min-width: 1200px) { 
+.gallery { grid-template-columns: repeat(4, 1fr); } 
+.featured { grid-column: span 2; grid-row: span 2; }  /* big featured tile */ 
+.featured .thumb img { height: 100%; } 
+.card:last-child { grid-column: span 2; }              
+.card:last-child .thumb img { aspect-ratio: 3 / 1; } 
+} 
+/* ---------- Lightbox ---------- */ 
+.lightbox { 
+position: fixed; inset: 0; z-index: 100; 
+background: rgba(0, 0, 0, .88); 
+/* fills the empty cell in the last row */ 
+display: flex; align-items: center; justify-content: center; 
+padding: 20px; 
+} 
+.lightbox[hidden] { display: none; } 
+.lb-figure { max-width: 800px; width: 100%; text-align: center; color: #fff; } 
+.lb-figure img { max-height: 70vh; width: 100%; object-fit: contain; border-radius: 8px; } 
+.lb-figure figcaption { margin-top: 10px; } 
+ 
+.lb-btn { 
+background: rgba(255, 255, 255, .15); color: #fff; border: 0; 
+font-size: 1.6rem; width: 46px; height: 46px; border-radius: 50%; cursor: pointer; 
+} 
+.lb-btn:hover { background: var(--gold); color: #000; } 
+.lb-close { position: absolute; top: 14px; right: 14px; } 
+.lb-prev { margin-right: 10px; } 
+.lb-next { margin-left: 10px; } 
+@media (max-width: 599px) { 
+.lb-prev, .lb-next { position: absolute; bottom: 20px; } 
+.lb-prev { left: 20px; } 
+.lb-next { right: 20px; } 
+} 
+/* Respect users who prefer less motion */ 
+@media (prefers-reduced-motion: reduce) { 
+.card { transition: none; } 
+.card:hover { transform: none; } 
+}
