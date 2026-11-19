@@ -1,0 +1,155 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta name="description" content="Legal Sphere - legal advisory and documentation services 
+gallery"> 
+<title>Legal Sphere - Legal Advisory &amp; Documentation</title> 
+<link rel="stylesheet" href="style.css"> 
+</head> 
+<body> 
+<a class="skip-link" href="#gallery">Skip to gallery</a> 
+<!-- Header (Flexbox) --> 
+<header class="site-header"> 
+<div class="container header-inner"> 
+<h1 class="logo">Legal<span>Sphere</span></h1> 
+<nav aria-label="Main navigation"> 
+<ul class="nav-list"> 
+<li><a href="#gallery">Services</a></li> 
+<li><a href="#about">About</a></li> 
+<li><a href="#contact">Contact</a></li> 
+</ul> 
+</nav> 
+</div> 
+
+ 
+  </header> 
+ 
+  <main class="container"> 
+    <section class="hero"> 
+      <h2>Legal Advisory &amp; Documentation, Made Simple</h2> 
+      <p>Browse our services below. Click any image to view it larger.</p> 
+    </section> 
+ 
+    <!-- Image gallery (CSS Grid) --> 
+    <section id="gallery" aria-labelledby="gallery-title"> 
+      <h2 id="gallery-title" class="section-title">Our Services</h2> 
+ 
+      <div class="gallery"> 
+        <figure class="card featured"> 
+          <button class="thumb" type="button" data-index="0" aria-label="View Legal Advisory 
+image larger"> 
+            <img src="images/legal-advisory.svg" alt="Scales of justice representing legal advisory" 
+width="600" height="400"> 
+          </button> 
+          <figcaption><h3>Legal Advisory</h3><p>Expert guidance on your rights and 
+options.</p></figcaption> 
+        </figure> 
+ 
+        <figure class="card"> 
+          <button class="thumb" type="button" data-index="1" aria-label="View Contract Drafting 
+image larger"> 
+            <img src="images/contract-drafting.svg" alt="Contract paper with signature line" 
+width="600" height="400" loading="lazy"> 
+          </button> 
+          <figcaption><h3>Contract Drafting</h3><p>Clear, enforceable 
+agreements.</p></figcaption> 
+        </figure> 
+ 
+        <figure class="card"> 
+          <button class="thumb" type="button" data-index="2" aria-label="View Property 
+Documents image larger"> 
+
+ 
+            <img src="images/property-documents.svg" alt="House icon representing property 
+documents" width="600" height="400" loading="lazy"> 
+          </button> 
+          <figcaption><h3>Property Documents</h3><p>Sale deeds, leases and title 
+checks.</p></figcaption> 
+        </figure> 
+ 
+        <figure class="card"> 
+          <button class="thumb" type="button" data-index="3" aria-label="View Notary and 
+Affidavits image larger"> 
+            <img src="images/notary-affidavits.svg" alt="Notary seal with a star for affidavits" 
+width="600" height="400" loading="lazy"> 
+          </button> 
+          <figcaption><h3>Notary &amp; Affidavits</h3><p>Attestation and sworn 
+statements.</p></figcaption> 
+        </figure> 
+ 
+        <figure class="card"> 
+          <button class="thumb" type="button" data-index="4" aria-label="View Company 
+Registration image larger"> 
+            <img src="images/company-registration.svg" alt="Office buildings representing company 
+registration" width="600" height="400" loading="lazy"> 
+          </button> 
+          <figcaption><h3>Company Registration</h3><p>Start-up and business 
+incorporation.</p></figcaption> 
+        </figure> 
+ 
+        <figure class="card"> 
+          <button class="thumb" type="button" data-index="5" aria-label="View Intellectual 
+Property image larger"> 
+            <img src="images/intellectual-property.svg" alt="Light bulb with copyright symbol for 
+intellectual property" width="600" height="400" loading="lazy"> 
+          </button> 
+          <figcaption><h3>Intellectual Property</h3><p>Trademarks, patents and 
+copyright.</p></figcaption> 
+        </figure> 
+ 
+        <figure class="card"> 
+
+ 
+          <button class="thumb" type="button" data-index="6" aria-label="View Family Law image 
+larger"> 
+            <img src="images/family-law.svg" alt="Family figures representing family law" 
+width="600" height="400" loading="lazy"> 
+          </button> 
+          <figcaption><h3>Family Law</h3><p>Marriage, adoption and wills.</p></figcaption> 
+        </figure> 
+ 
+        <figure class="card"> 
+          <button class="thumb" type="button" data-index="7" aria-label="View Dispute Resolution 
+image larger"> 
+            <img src="images/dispute-resolution.svg" alt="Judge's gavel representing dispute 
+resolution" width="600" height="400" loading="lazy"> 
+          </button> 
+          <figcaption><h3>Dispute Resolution</h3><p>Mediation, notices and court 
+support.</p></figcaption> 
+        </figure> 
+      </div> 
+    </section> 
+ 
+    <section id="about" class="info"> 
+      <h2 class="section-title">About</h2> 
+      <p>Legal Sphere is a sample academic project showing how legal advisory and documentation 
+services can be presented in a responsive grid layout. It does not provide real legal advice.</p> 
+    </section> 
+  </main> 
+ 
+  <footer id="contact" class="site-footer"> 
+    <div class="container footer-inner"> 
+      <p>&copy; 2026 Legal Sphere (academic practicum)</p> 
+      <p>Contact: info@legalsphere.example</p> 
+    </div> 
+  </footer> 
+ 
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image 
+viewer" hidden> 
+<button class="lb-btn lb-close" id="lb-close" type="button" aria
+label="Close">&times;</button> 
+<button class="lb-btn lb-prev" id="lb-prev" type="button" aria-label="Previous 
+image">&#10094;</button> 
+<figure class="lb-figure"> 
+<img id="lb-img" src="" alt=""> 
+<figcaption id="lb-caption"></figcaption> 
+</figure> 
+<button class="lb-btn lb-next" id="lb-next" type="button" aria-label="Next 
+image">&#10095;</button> 
+</div> 
+<script src="script.js"></script> 
+</body> 
+</html>
